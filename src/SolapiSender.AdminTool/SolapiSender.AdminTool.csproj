@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>SolapiSender.AdminTool</RootNamespace>
+    <AssemblyName>SolapiSenderAdmin</AssemblyName>
+    <ApplicationManifest>..\SolapiSender.UserApp\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WPF-UI" />
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <PackageReference Include="FirebaseAdmin" />
+    <PackageReference Include="Google.Cloud.Firestore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SolapiSender.Core\SolapiSender.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Dùng chung font với UserApp -->
+    <Resource Include="..\SolapiSender.UserApp\Assets\Fonts\*.otf" Link="Assets\Fonts\%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

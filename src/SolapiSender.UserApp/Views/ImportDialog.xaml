@@ -1,0 +1,118 @@
+<ui:FluentWindow
+    x:Class="SolapiSender.UserApp.Views.ImportDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:l="clr-namespace:SolapiSender.UserApp.Localization"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="{l:Loc Import_Title}"
+    Width="860"
+    Height="680"
+    ExtendsContentIntoTitleBar="True"
+    FontFamily="{DynamicResource AppFont}"
+    WindowBackdropType="Mica"
+    WindowCornerPreference="Round"
+    WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ui:TitleBar Title="{l:Loc Import_Title}" ShowMaximize="False" ShowMinimize="False" />
+
+        <StackPanel Grid.Row="1" Margin="28,4,28,12">
+            <TextBlock Style="{StaticResource PageTitle}" Text="{l:Loc Import_Title}" />
+            <TextBlock x:Name="FileNameText" Style="{StaticResource Caption}" />
+        </StackPanel>
+
+        <!--  Cấu hình cột  -->
+        <Grid Grid.Row="2" Margin="28,0,28,12">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="16" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="16" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackPanel>
+                <TextBlock Style="{StaticResource FieldLabel}" Text="{l:Loc Import_Sheet}" />
+                <ComboBox x:Name="SheetCombo" SelectionChanged="OnSheetChanged" />
+                <CheckBox
+                    x:Name="HeaderCheck"
+                    Margin="0,8,0,0"
+                    Checked="OnHeaderChanged"
+                    Content="{l:Loc Import_HasHeader}"
+                    IsChecked="True"
+                    Unchecked="OnHeaderChanged" />
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <TextBlock Style="{StaticResource FieldLabel}" Text="{l:Loc Import_PhoneColumn}" />
+                <ComboBox x:Name="PhoneCombo" SelectionChanged="OnMappingChanged" />
+                <TextBlock
+                    Margin="0,12,0,6"
+                    Style="{StaticResource FieldLabel}"
+                    Text="{l:Loc Import_NameColumn}" />
+                <ComboBox x:Name="NameCombo" SelectionChanged="OnMappingChanged" />
+            </StackPanel>
+            <StackPanel Grid.Column="4">
+                <TextBlock Style="{StaticResource FieldLabel}" Text="{l:Loc Import_VariableColumns}" />
+                <Border
+                    MaxHeight="120"
+                    Padding="8,4"
+                    BorderBrush="{DynamicResource ControlStrokeColorDefaultBrush}"
+                    BorderThickness="1"
+                    CornerRadius="6">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel x:Name="VariablePanel" />
+                    </ScrollViewer>
+                </Border>
+                <TextBlock
+                    Margin="0,6,0,0"
+                    Style="{StaticResource Caption}"
+                    Text="{l:Loc Import_VariableHint}" />
+            </StackPanel>
+        </Grid>
+
+        <!--  Xem trước  -->
+        <Border
+            Grid.Row="3"
+            Margin="28,0,28,12"
+            Padding="0"
+            Style="{StaticResource Card}">
+            <DataGrid
+                x:Name="PreviewGrid"
+                AutoGenerateColumns="True"
+                CanUserAddRows="False"
+                HeadersVisibility="Column"
+                IsReadOnly="True" />
+        </Border>
+
+        <Grid Grid.Row="4" Margin="28,0,28,24">
+            <TextBlock
+                x:Name="StatsText"
+                VerticalAlignment="Center"
+                FontWeight="SemiBold" />
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <ui:Button
+                    Margin="0,0,8,0"
+                    Click="OnCancel"
+                    Content="{l:Loc Common_Cancel}" />
+                <ui:Button
+                    x:Name="OkButton"
+                    MinWidth="140"
+                    Appearance="Primary"
+                    Click="OnOk"
+                    Content="{l:Loc Import_Add}"
+                    Icon="{ui:SymbolIcon Add24}" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</ui:FluentWindow>

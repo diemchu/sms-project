@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EA6535B8-1FD4-4F5E-B340-97ECD9C23A0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolapiSender.Core", "src\SolapiSender.Core\SolapiSender.Core.csproj", "{CF9A0574-0EB8-49AA-A765-5C27330FB8B0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CDE0D64A-9C7B-4AFD-ACF9-841B1670CA48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolapiSender.Core.Tests", "tests\SolapiSender.Core.Tests\SolapiSender.Core.Tests.csproj", "{06D5F792-8200-4F3E-9120-F5BEE925E43C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolapiSender.UserApp", "src\SolapiSender.UserApp\SolapiSender.UserApp.csproj", "{4CEB6335-3E10-456E-A03B-88B41CAE058A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolapiSender.AdminTool", "src\SolapiSender.AdminTool\SolapiSender.AdminTool.csproj", "{4CFF1523-61DD-4BBC-92D6-81F5CDDF9DC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolapiSender.AdminTool.Tests", "tests\SolapiSender.AdminTool.Tests\SolapiSender.AdminTool.Tests.csproj", "{97FB02A4-0E6A-4CEA-8B08-C6428528E438}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF9A0574-0EB8-49AA-A765-5C27330FB8B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF9A0574-0EB8-49AA-A765-5C27330FB8B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF9A0574-0EB8-49AA-A765-5C27330FB8B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF9A0574-0EB8-49AA-A765-5C27330FB8B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06D5F792-8200-4F3E-9120-F5BEE925E43C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06D5F792-8200-4F3E-9120-F5BEE925E43C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06D5F792-8200-4F3E-9120-F5BEE925E43C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06D5F792-8200-4F3E-9120-F5BEE925E43C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CEB6335-3E10-456E-A03B-88B41CAE058A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CEB6335-3E10-456E-A03B-88B41CAE058A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CEB6335-3E10-456E-A03B-88B41CAE058A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CEB6335-3E10-456E-A03B-88B41CAE058A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CFF1523-61DD-4BBC-92D6-81F5CDDF9DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CFF1523-61DD-4BBC-92D6-81F5CDDF9DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CFF1523-61DD-4BBC-92D6-81F5CDDF9DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CFF1523-61DD-4BBC-92D6-81F5CDDF9DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97FB02A4-0E6A-4CEA-8B08-C6428528E438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97FB02A4-0E6A-4CEA-8B08-C6428528E438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97FB02A4-0E6A-4CEA-8B08-C6428528E438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97FB02A4-0E6A-4CEA-8B08-C6428528E438}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CF9A0574-0EB8-49AA-A765-5C27330FB8B0} = {EA6535B8-1FD4-4F5E-B340-97ECD9C23A0A}
+		{06D5F792-8200-4F3E-9120-F5BEE925E43C} = {CDE0D64A-9C7B-4AFD-ACF9-841B1670CA48}
+		{4CEB6335-3E10-456E-A03B-88B41CAE058A} = {EA6535B8-1FD4-4F5E-B340-97ECD9C23A0A}
+		{4CFF1523-61DD-4BBC-92D6-81F5CDDF9DC5} = {EA6535B8-1FD4-4F5E-B340-97ECD9C23A0A}
+		{97FB02A4-0E6A-4CEA-8B08-C6428528E438} = {CDE0D64A-9C7B-4AFD-ACF9-841B1670CA48}
+	EndGlobalSection
+EndGlobal

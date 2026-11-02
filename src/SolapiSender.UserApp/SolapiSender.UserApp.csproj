@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>SolapiSender.UserApp</RootNamespace>
+    <AssemblyName>SolapiSender</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <NeutralLanguage>ko</NeutralLanguage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WPF-UI" />
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SolapiSender.Core\SolapiSender.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <Resource Include="Assets\Fonts\*.otf" />
+  </ItemGroup>
+
+</Project>

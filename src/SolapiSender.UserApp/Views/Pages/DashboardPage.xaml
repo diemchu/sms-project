@@ -1,0 +1,155 @@
+<Page
+    x:Class="SolapiSender.UserApp.Views.Pages.DashboardPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:l="clr-namespace:SolapiSender.UserApp.Localization"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:vm="clr-namespace:SolapiSender.UserApp.ViewModels.Pages"
+    d:DataContext="{d:DesignInstance vm:DashboardViewModel}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Margin="32,24,32,32">
+            <Grid>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource PageTitle}" Text="{Binding Greeting}" />
+                    <TextBlock Style="{StaticResource PageSubtitle}" Text="{l:Loc Dashboard_Subtitle}" />
+                </StackPanel>
+                <ui:Button
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Command="{Binding RefreshCommand}"
+                    Content="{l:Loc Common_Refresh}"
+                    Icon="{ui:SymbolIcon ArrowSync24}" />
+            </Grid>
+
+            <ui:InfoBar
+                Margin="0,0,0,12"
+                IsClosable="False"
+                IsOpen="{Binding ErrorMessage, Converter={StaticResource HasText}, Mode=OneWay}"
+                Message="{Binding ErrorMessage}"
+                Severity="Error" />
+            <ui:InfoBar
+                Title="{l:Loc Dashboard_LowBalanceTitle}"
+                Margin="0,0,0,12"
+                IsClosable="True"
+                IsOpen="{Binding IsLowBalance, Mode=OneWay}"
+                Message="{Binding LowBalanceMessage}"
+                Severity="Warning" />
+
+            <ui:ProgressRing
+                Margin="0,40"
+                IsIndeterminate="True"
+                Visibility="{Binding RefreshCommand.IsRunning, Converter={StaticResource BoolToVisibility}}" />
+
+            <!--  Thẻ số liệu  -->
+            <UniformGrid Margin="-6,0" Columns="4">
+                <Border Margin="6" Style="{StaticResource Card}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Foreground="{DynamicResource AccentTextFillColorPrimaryBrush}" Symbol="Wallet24" />
+                            <TextBlock Margin="8,0,0,0" Style="{StaticResource Caption}" Text="{l:Loc Dashboard_Balance}" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <TextBlock Style="{StaticResource StatValue}" Text="{Binding Balance, StringFormat={}{0:N0}원}" />
+                        <TextBlock Style="{StaticResource Caption}">
+                            <Run Text="{l:Loc Dashboard_Point}" />
+                            <Run Text="{Binding Point, StringFormat={}{0:N0}P, Mode=OneWay}" />
+                        </TextBlock>
+                        <ui:HyperlinkButton
+                            Margin="-10,4,0,-6"
+                            Padding="10,4"
+                            Command="{Binding OpenChargeCommand}"
+                            Content="{l:Loc Dashboard_Charge}" />
+                    </StackPanel>
+                </Border>
+                <Border Margin="6" Style="{StaticResource Card}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Foreground="{DynamicResource AccentTextFillColorPrimaryBrush}" Symbol="Send24" />
+                            <TextBlock Margin="8,0,0,0" Style="{StaticResource Caption}" Text="{l:Loc Dashboard_Today}" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <TextBlock Style="{StaticResource StatValue}" Text="{Binding TodayTotal, StringFormat={}{0:N0}}" />
+                        <TextBlock Style="{StaticResource Caption}">
+                            <Run Text="{l:Loc Dashboard_Failed}" />
+                            <Run Text="{Binding TodayFailed, Mode=OneWay}" />
+                        </TextBlock>
+                    </StackPanel>
+                </Border>
+                <Border Margin="6" Style="{StaticResource Card}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Foreground="{DynamicResource AccentTextFillColorPrimaryBrush}" Symbol="CalendarLtr24" />
+                            <TextBlock Margin="8,0,0,0" Style="{StaticResource Caption}" Text="{l:Loc Dashboard_Month}" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <TextBlock Style="{StaticResource StatValue}" Text="{Binding MonthTotal, StringFormat={}{0:N0}}" />
+                        <TextBlock Style="{StaticResource Caption}" Text="{l:Loc Dashboard_MonthHint}" />
+                    </StackPanel>
+                </Border>
+                <Border Margin="6" Style="{StaticResource Card}">
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <ui:SymbolIcon Foreground="{DynamicResource AccentTextFillColorPrimaryBrush}" Symbol="CheckmarkCircle24" />
+                            <TextBlock Margin="8,0,0,0" Style="{StaticResource Caption}" Text="{l:Loc Dashboard_SuccessRate}" VerticalAlignment="Center" />
+                        </StackPanel>
+                        <TextBlock Style="{StaticResource StatValue}" Text="{Binding MonthSuccessRate, StringFormat={}{0:P1}}" />
+                        <ProgressBar
+                            Height="4"
+                            Margin="0,6,0,0"
+                            Maximum="1"
+                            Value="{Binding MonthSuccessRate, Mode=OneWay}" />
+                    </StackPanel>
+                </Border>
+            </UniformGrid>
+
+            <!--  Lần gửi gần đây  -->
+            <Border Margin="0,12,0,0" Style="{StaticResource Card}">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource SectionTitle}" Text="{l:Loc Dashboard_Recent}" />
+                    <TextBlock
+                        Margin="0,8"
+                        Style="{StaticResource Caption}"
+                        Text="{l:Loc Common_Empty}"
+                        Visibility="{Binding RecentGroups.Count, Converter={StaticResource BoolToCollapsed}}" />
+                    <ItemsControl ItemsSource="{Binding RecentGroups}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate DataType="{x:Type vm:GroupRow}">
+                                <Border
+                                    Padding="4,10"
+                                    BorderBrush="{DynamicResource DividerStrokeColorDefaultBrush}"
+                                    BorderThickness="0,0,0,1">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="20" />
+                                            <ColumnDefinition Width="160" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="140" />
+                                            <ColumnDefinition Width="120" />
+                                            <ColumnDefinition Width="100" />
+                                        </Grid.ColumnDefinitions>
+                                        <ContentPresenter Content="{Binding State}" ContentTemplate="{StaticResource StateDot}" />
+                                        <TextBlock Grid.Column="1" Text="{Binding Date, Converter={StaticResource LocalTime}}" />
+                                        <TextBlock
+                                            Grid.Column="2"
+                                            Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                                            Text="{Binding GroupId}"
+                                            TextTrimming="CharacterEllipsis" />
+                                        <TextBlock Grid.Column="3" Text="{Binding StatusText}" />
+                                        <TextBlock Grid.Column="4">
+                                            <Run Text="{Binding Success, Mode=OneWay}" /><Run Text=" / " /><Run Text="{Binding Total, Mode=OneWay}" />
+                                        </TextBlock>
+                                        <TextBlock
+                                            Grid.Column="5"
+                                            HorizontalAlignment="Right"
+                                            Text="{Binding Cost, StringFormat={}{0:N0}원}" />
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

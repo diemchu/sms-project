@@ -1,0 +1,99 @@
+<ui:FluentWindow
+    x:Class="SolapiSender.AdminTool.Views.SetupWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:vm="clr-namespace:SolapiSender.AdminTool.ViewModels"
+    Title="Kết nối Firebase"
+    Width="640"
+    Height="620"
+    d:DataContext="{d:DesignInstance vm:SetupViewModel}"
+    ExtendsContentIntoTitleBar="True"
+    FontFamily="{DynamicResource AppFont}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    ResizeMode="CanMinimize"
+    WindowBackdropType="Mica"
+    WindowCornerPreference="Round"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ui:TitleBar Title="SolapiSender Admin" ShowMaximize="False" />
+
+        <StackPanel Grid.Row="1" Margin="40,8,40,32">
+            <Border Width="52" Height="52" HorizontalAlignment="Left" Background="#FFA000" CornerRadius="14">
+                <ui:SymbolIcon FontSize="28" Foreground="White" Symbol="Fire24" />
+            </Border>
+            <TextBlock Margin="0,18,0,4" Style="{StaticResource PageTitle}" Text="Kết nối Firebase" />
+            <TextBlock Style="{StaticResource PageSubtitle}" Text="AdminTool dùng Firebase Admin SDK với service account. File JSON được mã hóa DPAPI và chỉ lưu trên máy này; tuyệt đối không đưa file này vào UserApp hay gửi cho chủ quán." />
+
+            <Border Margin="0,0,0,16" Style="{StaticResource Card}">
+                <StackPanel>
+                    <TextBlock Style="{StaticResource SectionTitle}" Text="Lấy file service account" />
+                    <TextBlock LineHeight="20" Style="{StaticResource Caption}" Text="1. Firebase Console → Project settings → Service accounts.&#10;2. Bấm &quot;Generate new private key&quot; → tải file .json.&#10;3. Chọn file đó ở dưới. Sau khi kết nối, nên cất file gốc vào nơi an toàn." />
+                    <ui:Button
+                        Margin="0,10,0,0"
+                        Command="{Binding OpenConsoleCommand}"
+                        Content="Mở Firebase Console"
+                        Icon="{ui:SymbolIcon Open24}" />
+                </StackPanel>
+            </Border>
+
+            <ui:Button
+                Command="{Binding PickFileCommand}"
+                Content="Chọn file JSON…"
+                Icon="{ui:SymbolIcon DocumentArrowRight24}" />
+
+            <Border
+                Margin="0,12,0,0"
+                Padding="14,10"
+                Background="{DynamicResource SubtleFillColorSecondaryBrush}"
+                CornerRadius="6"
+                Visibility="{Binding HasFile, Converter={StaticResource BoolToVisibility}}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Style="{StaticResource Caption}" Text="File" />
+                    <TextBlock Grid.Column="1" Text="{Binding FileName}" />
+                    <TextBlock Grid.Row="1" Style="{StaticResource Caption}" Text="Project ID" />
+                    <TextBlock Grid.Row="1" Grid.Column="1" FontWeight="SemiBold" Text="{Binding ProjectId}" />
+                    <TextBlock Grid.Row="2" Style="{StaticResource Caption}" Text="Service account" />
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding ClientEmail}" TextTrimming="CharacterEllipsis" />
+                </Grid>
+            </Border>
+
+            <ui:InfoBar
+                Margin="0,12,0,0"
+                IsClosable="False"
+                IsOpen="{Binding ErrorMessage, Converter={StaticResource HasText}, Mode=OneWay}"
+                Message="{Binding ErrorMessage}"
+                Severity="Error" />
+
+            <ui:Button
+                Height="40"
+                MinWidth="180"
+                Margin="0,18,0,0"
+                HorizontalAlignment="Right"
+                Appearance="Primary"
+                Command="{Binding ConnectCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <ui:ProgressRing Width="16" Height="16" Margin="0,0,8,0" IsIndeterminate="True"
+                                     Visibility="{Binding ConnectCommand.IsRunning, Converter={StaticResource BoolToVisibility}}" />
+                    <TextBlock Text="Kiểm tra và kết nối" />
+                </StackPanel>
+            </ui:Button>
+        </StackPanel>
+    </Grid>
+</ui:FluentWindow>

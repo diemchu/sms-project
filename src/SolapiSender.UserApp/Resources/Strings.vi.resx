@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="BulkSend_AddPasted" xml:space="preserve"><value>Thêm vào danh sách</value></data>
+  <data name="BulkSend_Clear" xml:space="preserve"><value>Xóa tất cả</value></data>
+  <data name="BulkSend_ImportExcel" xml:space="preserve"><value>Nhập Excel</value></data>
+  <data name="BulkSend_Paste" xml:space="preserve"><value>Dán danh sách</value></data>
+  <data name="BulkSend_PasteHint" xml:space="preserve"><value>Mỗi dòng một số. Hỗ trợ dạng "số,tên".
+VD: 010-1234-5678,Hong Gil-dong</value></data>
+  <data name="BulkSend_PickTemplate" xml:space="preserve"><value>Chọn mẫu tin đã lưu</value></data>
+  <data name="BulkSend_RemoveInvalid" xml:space="preserve"><value>Bỏ số lỗi/trùng</value></data>
+  <data name="BulkSend_Step1" xml:space="preserve"><value>① Người nhận</value></data>
+  <data name="BulkSend_Step2" xml:space="preserve"><value>② Soạn tin</value></data>
+  <data name="BulkSend_Step3" xml:space="preserve"><value>③ Gửi</value></data>
+  <data name="BulkSend_Subtitle" xml:space="preserve"><value>Thêm người nhận từ Excel hoặc dán danh sách, soạn tin rồi gửi ngay hoặc hẹn giờ.</value></data>
+  <data name="BulkSend_Title" xml:space="preserve"><value>Gửi tin hàng loạt</value></data>
+  <data name="BulkSend_Total" xml:space="preserve"><value>Tổng</value></data>
+  <data name="Col_Code" xml:space="preserve"><value>Mã</value></data>
+  <data name="Col_Cost" xml:space="preserve"><value>Chi phí</value></data>
+  <data name="Col_Date" xml:space="preserve"><value>Thời gian</value></data>
+  <data name="Col_Failed" xml:space="preserve"><value>Thất bại</value></data>
+  <data name="Col_From" xml:space="preserve"><value>Số gửi</value></data>
+  <data name="Col_Message" xml:space="preserve"><value>Nội dung</value></data>
+  <data name="Col_Name" xml:space="preserve"><value>Tên</value></data>
+  <data name="Col_Phone" xml:space="preserve"><value>Số điện thoại</value></data>
+  <data name="Col_Reason" xml:space="preserve"><value>Lý do</value></data>
+  <data name="Col_Result" xml:space="preserve"><value>Kết quả</value></data>
+  <data name="Col_Status" xml:space="preserve"><value>Trạng thái</value></data>
+  <data name="Col_Success" xml:space="preserve"><value>Thành công</value></data>
+  <data name="Col_Total" xml:space="preserve"><value>Tổng</value></data>
+  <data name="Col_Type" xml:space="preserve"><value>Loại</value></data>
+  <data name="Common_Cancel" xml:space="preserve"><value>Hủy</value></data>
+  <data name="Common_Delete" xml:space="preserve"><value>Xóa</value></data>
+  <data name="Common_Done" xml:space="preserve"><value>Hoàn tất</value></data>
+  <data name="Common_Empty" xml:space="preserve"><value>Chưa có dữ liệu.</value></data>
+  <data name="Common_Error" xml:space="preserve"><value>Lỗi</value></data>
+  <data name="Common_ExportExcel" xml:space="preserve"><value>Xuất Excel</value></data>
+  <data name="Common_Exported" xml:space="preserve"><value>Đã xuất file Excel.</value></data>
+  <data name="Common_Info" xml:space="preserve"><value>Thông báo</value></data>
+  <data name="Common_OK" xml:space="preserve"><value>OK</value></data>
+  <data name="Common_Refresh" xml:space="preserve"><value>Làm mới</value></data>
+  <data name="Common_Save" xml:space="preserve"><value>Lưu</value></data>
+  <data name="Compose_AdHint" xml:space="preserve"><value>Khi bật: tự thêm "(광고)Tên cửa hàng" ở đầu, "무료거부 080…" ở cuối, và chặn gửi từ 21:00 đến 08:00 (giờ Hàn).</value></data>
+  <data name="Compose_AdMode" xml:space="preserve"><value>Tin quảng cáo</value></data>
+  <data name="Compose_AdName" xml:space="preserve"><value>Tên cửa hàng hiển thị</value></data>
+  <data name="Compose_AttachImage" xml:space="preserve"><value>Đính kèm ảnh (JPG ≤ 200KB)</value></data>
+  <data name="Compose_Cost" xml:space="preserve"><value>{0:N0} tin (SMS {1:N0} · LMS {2:N0} · MMS {3:N0}) · Chi phí ước tính {4:N0}원</value></data>
+  <data name="Compose_ImageFormat" xml:space="preserve"><value>Chỉ hỗ trợ ảnh JPG.</value></data>
+  <data name="Compose_ImageTooLarge" xml:space="preserve"><value>Ảnh vượt quá 200KB. Vui lòng giảm dung lượng.</value></data>
+  <data name="Compose_InsertVariable" xml:space="preserve"><value>Chèn biến</value></data>
+  <data name="Compose_OptOut" xml:space="preserve"><value>Số từ chối 080</value></data>
+  <data name="Compose_Preview" xml:space="preserve"><value>Xem trước (theo người nhận đầu tiên)</value></data>
+  <data name="Compose_SampleName" xml:space="preserve"><value>Hong Gil-dong</value></data>
+  <data name="Compose_SubjectHint" xml:space="preserve"><value>Tiêu đề (chỉ LMS/MMS, không bắt buộc)</value></data>
+  <data name="Compose_TextHint" xml:space="preserve"><value>Nhập nội dung. #{이름} sẽ được thay bằng tên người nhận.</value></data>
+  <data name="Compose_TooLong" xml:space="preserve"><value>Tin nhắn vượt quá 2.000 byte. Vui lòng rút gọn.</value></data>
+  <data name="Compose_Unsupported" xml:space="preserve"><value>Các ký tự sau có thể bị lỗi trên điện thoại: {0}</value></data>
+  <data name="Connect_Cancel" xml:space="preserve"><value>Để sau (đăng xuất)</value></data>
+  <data name="Connect_HowTo" xml:space="preserve"><value>Lấy API Key ở đâu?</value></data>
+  <data name="Connect_HowToSteps" xml:space="preserve"><value>1. Đăng nhập SOLAPI Console.
+2. Vào [개발/연동] → [API Key 관리], tạo API Key mới.
+3. Dán API Key và API Secret vào bên dưới.</value></data>
+  <data name="Connect_OpenConsole" xml:space="preserve"><value>Mở SOLAPI Console</value></data>
+  <data name="Connect_Security" xml:space="preserve"><value>API Secret chỉ được lưu mã hóa trên máy này, không gửi lên máy chủ.</value></data>
+  <data name="Connect_Subtitle" xml:space="preserve"><value>Kết nối tài khoản SOLAPI để gửi tin. Key được kiểm tra bằng cách tra số dư trước khi lưu.</value></data>
+  <data name="Connect_Success" xml:space="preserve"><value>Kết nối thành công. Số dư {0:N0}원 · Điểm {1:N0}P</value></data>
+  <data name="Connect_Title" xml:space="preserve"><value>Kết nối SOLAPI</value></data>
+  <data name="Connect_Verify" xml:space="preserve"><value>Kiểm tra và lưu</value></data>
+  <data name="Dashboard_Balance" xml:space="preserve"><value>Số dư</value></data>
+  <data name="Dashboard_Charge" xml:space="preserve"><value>Nạp tiền →</value></data>
+  <data name="Dashboard_Failed" xml:space="preserve"><value>Thất bại</value></data>
+  <data name="Dashboard_Greeting" xml:space="preserve"><value>Xin chào, {0}</value></data>
+  <data name="Dashboard_LowBalance" xml:space="preserve"><value>Số dư (kể cả điểm) thấp hơn ngưỡng {0:N0}원. Vui lòng nạp tiền trước khi gửi.</value></data>
+  <data name="Dashboard_LowBalanceTitle" xml:space="preserve"><value>Số dư thấp</value></data>
+  <data name="Dashboard_Month" xml:space="preserve"><value>Gửi tháng này</value></data>
+  <data name="Dashboard_MonthHint" xml:space="preserve"><value>Từ ngày 1 đến hôm nay</value></data>
+  <data name="Dashboard_Point" xml:space="preserve"><value>Điểm</value></data>
+  <data name="Dashboard_Recent" xml:space="preserve"><value>Lần gửi gần đây</value></data>
+  <data name="Dashboard_Subtitle" xml:space="preserve"><value>Tình hình gửi tin và số dư trong ngày.</value></data>
+  <data name="Dashboard_SuccessRate" xml:space="preserve"><value>Tỉ lệ thành công tháng này</value></data>
+  <data name="Dashboard_Today" xml:space="preserve"><value>Gửi hôm nay</value></data>
+  <data name="Err_Cancelled" xml:space="preserve"><value>Đã hủy thao tác.</value></data>
+  <data name="Err_FirebaseNotConfigured" xml:space="preserve"><value>Ứng dụng chưa được cấu hình máy chủ. Vui lòng liên hệ quản trị viên. (appsettings.json)</value></data>
+  <data name="Err_Login_DeviceLimit" xml:space="preserve"><value>Đã vượt số máy được phép ({0} máy). Vui lòng nhờ quản trị viên gỡ bớt thiết bị.</value></data>
+  <data name="Err_Login_Expired" xml:space="preserve"><value>Hạn sử dụng đã hết vào {0}. Vui lòng liên hệ quản trị viên để gia hạn.</value></data>
+  <data name="Err_Login_Invalid" xml:space="preserve"><value>Email hoặc mật khẩu không đúng.</value></data>
+  <data name="Err_Login_Locked" xml:space="preserve"><value>Tài khoản đã bị khóa. Vui lòng liên hệ quản trị viên.</value></data>
+  <data name="Err_Login_NotProvisioned" xml:space="preserve"><value>Tài khoản chưa được thiết lập. Vui lòng liên hệ quản trị viên.</value></data>
+  <data name="Err_Login_TooMany" xml:space="preserve"><value>Đăng nhập sai quá nhiều lần. Vui lòng thử lại sau.</value></data>
+  <data name="Err_Network" xml:space="preserve"><value>Vui lòng kiểm tra kết nối Internet.</value></data>
+  <data name="Err_PermissionDenied" xml:space="preserve"><value>Không có quyền truy cập. Vui lòng kiểm tra trạng thái tài khoản.</value></data>
+  <data name="Err_SessionExpired" xml:space="preserve"><value>Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.</value></data>
+  <data name="Err_Solapi_Balance" xml:space="preserve"><value>Số dư SOLAPI không đủ. Vui lòng nạp tiền rồi thử lại.</value></data>
+  <data name="Err_Solapi_ClockSkew" xml:space="preserve"><value>Giờ máy tính bị lệch. Vui lòng bật đồng bộ thời gian Windows.</value></data>
+  <data name="Err_Solapi_Forbidden" xml:space="preserve"><value>API Key này không có quyền dùng chức năng này.</value></data>
+  <data name="Err_Solapi_Invalid" xml:space="preserve"><value>Yêu cầu không hợp lệ.</value></data>
+  <data name="Err_Solapi_InvalidKey" xml:space="preserve"><value>API Key hoặc Secret không đúng.</value></data>
+  <data name="Err_Solapi_RateLimit" xml:space="preserve"><value>Quá nhiều yêu cầu. Vui lòng thử lại sau.</value></data>
+  <data name="Err_Solapi_Sender" xml:space="preserve"><value>Số gửi chưa được đăng ký. Vui lòng đăng ký số gửi trên SOLAPI.</value></data>
+  <data name="Err_Solapi_Server" xml:space="preserve"><value>Máy chủ SOLAPI đang gặp sự cố. Vui lòng thử lại sau.</value></data>
+  <data name="Err_Timeout" xml:space="preserve"><value>Hết thời gian chờ phản hồi. Vui lòng kiểm tra lại trong lịch sử gửi.</value></data>
+  <data name="Err_Unknown" xml:space="preserve"><value>Đã xảy ra lỗi không xác định. Vui lòng xem thư mục log.</value></data>
+  <data name="File_ExcelFilter" xml:space="preserve"><value>File Excel/CSV|*.xlsx;*.csv</value></data>
+  <data name="File_JpgFilter" xml:space="preserve"><value>Ảnh JPG|*.jpg;*.jpeg</value></data>
+  <data name="File_XlsxFilter" xml:space="preserve"><value>File Excel|*.xlsx</value></data>
+  <data name="GroupStatus_COMPLETE" xml:space="preserve"><value>Hoàn tất</value></data>
+  <data name="GroupStatus_FAILED" xml:space="preserve"><value>Thất bại</value></data>
+  <data name="GroupStatus_PENDING" xml:space="preserve"><value>Đang chờ</value></data>
+  <data name="GroupStatus_SCHEDULED" xml:space="preserve"><value>Đã hẹn giờ</value></data>
+  <data name="GroupStatus_SENDING" xml:space="preserve"><value>Đang gửi</value></data>
+  <data name="History_Err_Range" xml:space="preserve"><value>Ngày kết thúc sớm hơn ngày bắt đầu.</value></data>
+  <data name="History_From" xml:space="preserve"><value>Từ ngày</value></data>
+  <data name="History_LoadMore" xml:space="preserve"><value>Tải thêm</value></data>
+  <data name="History_PhoneHint" xml:space="preserve"><value>Tìm theo số</value></data>
+  <data name="History_Search" xml:space="preserve"><value>Tìm kiếm</value></data>
+  <data name="History_Status_All" xml:space="preserve"><value>Tất cả</value></data>
+  <data name="History_Status_Failed" xml:space="preserve"><value>Thất bại</value></data>
+  <data name="History_Status_Pending" xml:space="preserve"><value>Đang xử lý</value></data>
+  <data name="History_Status_Success" xml:space="preserve"><value>Thành công</value></data>
+  <data name="History_Subtitle" xml:space="preserve"><value>Tra cứu kết quả gửi trên SOLAPI theo ngày, trạng thái và xuất Excel.</value></data>
+  <data name="History_Tab_Groups" xml:space="preserve"><value>Lần gửi (nhóm)</value></data>
+  <data name="History_Tab_Messages" xml:space="preserve"><value>Từng tin nhắn</value></data>
+  <data name="History_Title" xml:space="preserve"><value>Lịch sử gửi</value></data>
+  <data name="History_To" xml:space="preserve"><value>Đến ngày</value></data>
+  <data name="Import_Add" xml:space="preserve"><value>Thêm người nhận</value></data>
+  <data name="Import_HasHeader" xml:space="preserve"><value>Dòng đầu là tiêu đề</value></data>
+  <data name="Import_NameColumn" xml:space="preserve"><value>Cột tên</value></data>
+  <data name="Import_None" xml:space="preserve"><value>(Không dùng)</value></data>
+  <data name="Import_PhoneColumn" xml:space="preserve"><value>Cột số điện thoại</value></data>
+  <data name="Import_ReadError" xml:space="preserve"><value>Không đọc được file: {0}</value></data>
+  <data name="Import_Sheet" xml:space="preserve"><value>Sheet</value></data>
+  <data name="Import_Stats" xml:space="preserve"><value>Tổng {0:N0} · Hợp lệ {1:N0} · Lỗi {2:N0} · Trùng {3:N0}</value></data>
+  <data name="Import_Title" xml:space="preserve"><value>Nhập từ Excel</value></data>
+  <data name="Import_VariableColumns" xml:space="preserve"><value>Cột dùng làm biến</value></data>
+  <data name="Import_VariableHint" xml:space="preserve"><value>Cột được chọn có thể chèn vào tin bằng #{tên cột}.</value></data>
+  <data name="Login_Button" xml:space="preserve"><value>Đăng nhập</value></data>
+  <data name="Login_Email" xml:space="preserve"><value>Email</value></data>
+  <data name="Login_Feature1" xml:space="preserve"><value>Gửi hàng loạt từ danh sách khách hàng Excel</value></data>
+  <data name="Login_Feature2" xml:space="preserve"><value>Hẹn giờ gửi theo ý muốn</value></data>
+  <data name="Login_Feature3" xml:space="preserve"><value>Tự động áp dụng quy định tin quảng cáo</value></data>
+  <data name="Login_Help" xml:space="preserve"><value>Chưa có tài khoản? Vui lòng liên hệ quản trị viên.</value></data>
+  <data name="Login_Password" xml:space="preserve"><value>Mật khẩu</value></data>
+  <data name="Login_Remember" xml:space="preserve"><value>Ghi nhớ đăng nhập</value></data>
+  <data name="Login_Subtitle" xml:space="preserve"><value>Đăng nhập bằng tài khoản được quản trị viên cấp.</value></data>
+  <data name="Login_Tagline" xml:space="preserve"><value>Gửi tin hàng loạt
+dễ nhất cho cửa hàng điện thoại</value></data>
+  <data name="Login_Title" xml:space="preserve"><value>Đăng nhập</value></data>
+  <data name="Main_ExpiresIn" xml:space="preserve"><value>Dùng đến {0} (còn {1} ngày)</value></data>
+  <data name="Nav_BulkSend" xml:space="preserve"><value>Gửi hàng loạt</value></data>
+  <data name="Nav_Dashboard" xml:space="preserve"><value>Tổng quan</value></data>
+  <data name="Nav_History" xml:space="preserve"><value>Lịch sử gửi</value></data>
+  <data name="Nav_SenderNumbers" xml:space="preserve"><value>Số gửi</value></data>
+  <data name="Nav_Settings" xml:space="preserve"><value>Cài đặt</value></data>
+  <data name="Nav_Templates" xml:space="preserve"><value>Mẫu tin</value></data>
+  <data name="Recipient_Duplicate" xml:space="preserve"><value>Trùng</value></data>
+  <data name="Recipient_Invalid" xml:space="preserve"><value>Lỗi</value></data>
+  <data name="Recipient_Valid" xml:space="preserve"><value>Hợp lệ</value></data>
+  <data name="Send_Button" xml:space="preserve"><value>Gửi tin</value></data>
+  <data name="Send_CannotSend" xml:space="preserve"><value>Không thể gửi</value></data>
+  <data name="Send_ConfirmBody" xml:space="preserve"><value>Gửi tin đến {0:N0} người.
+
+Số gửi: {1}
+Thời gian: {2}
+Phân loại: SMS {3:N0} · LMS {4:N0} · MMS {5:N0}
+Chi phí ước tính: {6:N0}원</value></data>
+  <data name="Send_ConfirmLowBalance" xml:space="preserve"><value>⚠ Số dư hiện tại {0:N0}원 có thể không đủ.</value></data>
+  <data name="Send_ConfirmTitle" xml:space="preserve"><value>Xác nhận gửi</value></data>
+  <data name="Send_Done" xml:space="preserve"><value>Đã gửi yêu cầu thành công.</value></data>
+  <data name="Send_Err_NoRecipients" xml:space="preserve"><value>Vui lòng thêm người nhận có số hợp lệ.</value></data>
+  <data name="Send_Err_NoSender" xml:space="preserve"><value>Vui lòng chọn số gửi.</value></data>
+  <data name="Send_Err_NoText" xml:space="preserve"><value>Vui lòng nhập nội dung tin.</value></data>
+  <data name="Send_Err_OptOut" xml:space="preserve"><value>Tin quảng cáo bắt buộc có số từ chối 080.</value></data>
+  <data name="Send_Err_QuietHours" xml:space="preserve"><value>Không được gửi quảng cáo từ 21:00 đến 08:00 (giờ Hàn). Vui lòng hẹn giờ sau {0}.</value></data>
+  <data name="Send_Err_ScheduleTooSoon" xml:space="preserve"><value>Thời gian hẹn phải sau thời điểm hiện tại ít nhất 10 phút.</value></data>
+  <data name="Send_From" xml:space="preserve"><value>Số gửi</value></data>
+  <data name="Send_Now" xml:space="preserve"><value>Gửi ngay</value></data>
+  <data name="Send_Progress" xml:space="preserve"><value>Đang xử lý {0:N0} / {1:N0} tin (lô {2}/{3})</value></data>
+  <data name="Send_ResultSheet" xml:space="preserve"><value>Kết quả gửi</value></data>
+  <data name="Send_ResultSummary" xml:space="preserve"><value>Đã nhận {0:N0} · Bị từ chối {1:N0} · Chưa gửi {2:N0}</value></data>
+  <data name="Send_Results" xml:space="preserve"><value>Kết quả gửi</value></data>
+  <data name="Send_Schedule" xml:space="preserve"><value>Hẹn giờ gửi</value></data>
+  <data name="Send_Scheduled" xml:space="preserve"><value>Đã đặt lịch gửi.</value></data>
+  <data name="Send_State_Accepted" xml:space="preserve"><value>Đã nhận</value></data>
+  <data name="Send_State_NotSent" xml:space="preserve"><value>Chưa gửi</value></data>
+  <data name="Send_State_Rejected" xml:space="preserve"><value>Bị từ chối</value></data>
+  <data name="Send_Stopped" xml:space="preserve"><value>Đã dừng gửi</value></data>
+  <data name="Send_UploadingImage" xml:space="preserve"><value>Đang tải ảnh lên…</value></data>
+  <data name="Sender_Default" xml:space="preserve"><value>Mặc định</value></data>
+  <data name="Sender_DefaultBadge" xml:space="preserve"><value>Được chọn tự động khi gửi tin.</value></data>
+  <data name="Sender_DefaultSet" xml:space="preserve"><value>Đã đặt {0} làm số gửi mặc định.</value></data>
+  <data name="Sender_Empty" xml:space="preserve"><value>Chưa có số gửi nào được đăng ký trên SOLAPI. Vui lòng đăng ký theo hướng dẫn bên dưới.</value></data>
+  <data name="Sender_EmptyTitle" xml:space="preserve"><value>Chưa có số gửi</value></data>
+  <data name="Sender_HowTo" xml:space="preserve"><value>Theo luật viễn thông Hàn Quốc, chỉ được gửi từ số đã đăng ký trước.
+Đăng ký và xác thực số tại SOLAPI Console → [발신번호 관리], số sẽ hiện ở danh sách này.</value></data>
+  <data name="Sender_HowToTitle" xml:space="preserve"><value>Hướng dẫn đăng ký số gửi</value></data>
+  <data name="Sender_OpenConsole" xml:space="preserve"><value>Đi đến trang đăng ký số</value></data>
+  <data name="Sender_SetDefault" xml:space="preserve"><value>Đặt làm mặc định</value></data>
+  <data name="Sender_Subtitle" xml:space="preserve"><value>Chỉ dùng được số đã đăng ký và xác thực trên SOLAPI. Hãy chọn số hay dùng làm mặc định.</value></data>
+  <data name="Sender_Title" xml:space="preserve"><value>Số gửi</value></data>
+  <data name="Settings_Account" xml:space="preserve"><value>Tài khoản</value></data>
+  <data name="Settings_Appearance" xml:space="preserve"><value>Giao diện</value></data>
+  <data name="Settings_ChangeKey" xml:space="preserve"><value>Đổi API Key</value></data>
+  <data name="Settings_Devices" xml:space="preserve"><value>Máy đã đăng ký</value></data>
+  <data name="Settings_Expires" xml:space="preserve"><value>Hạn sử dụng</value></data>
+  <data name="Settings_Language" xml:space="preserve"><value>Ngôn ngữ</value></data>
+  <data name="Settings_Logout" xml:space="preserve"><value>Đăng xuất</value></data>
+  <data name="Settings_LogoutConfirm" xml:space="preserve"><value>Bạn có muốn đăng xuất? Lần sau mở app sẽ cần đăng nhập lại.</value></data>
+  <data name="Settings_LowBalance" xml:space="preserve"><value>Ngưỡng cảnh báo số dư (원)</value></data>
+  <data name="Settings_OpenLogs" xml:space="preserve"><value>Mở thư mục log</value></data>
+  <data name="Settings_Prices" xml:space="preserve"><value>Đơn giá mỗi tin (원, để ước tính chi phí)</value></data>
+  <data name="Settings_PricesHint" xml:space="preserve"><value>Nhập theo đơn giá hợp đồng SOLAPI của bạn. Số tiền trừ thực tế theo SOLAPI.</value></data>
+  <data name="Settings_Saved" xml:space="preserve"><value>Đã lưu cài đặt.</value></data>
+  <data name="Settings_Sending" xml:space="preserve"><value>Cài đặt gửi tin</value></data>
+  <data name="Settings_Store" xml:space="preserve"><value>Tên cửa hàng</value></data>
+  <data name="Settings_Subtitle" xml:space="preserve"><value>Quản lý giao diện, ngôn ngữ, mặc định gửi tin và tài khoản.</value></data>
+  <data name="Settings_Theme" xml:space="preserve"><value>Chủ đề</value></data>
+  <data name="Settings_Theme_Dark" xml:space="preserve"><value>Tối</value></data>
+  <data name="Settings_Theme_Light" xml:space="preserve"><value>Sáng</value></data>
+  <data name="Settings_Theme_System" xml:space="preserve"><value>Theo hệ thống</value></data>
+  <data name="Settings_Title" xml:space="preserve"><value>Cài đặt</value></data>
+  <data name="Settings_Version" xml:space="preserve"><value>Phiên bản</value></data>
+  <data name="Template_AdBadge" xml:space="preserve"><value>QC</value></data>
+  <data name="Template_Content" xml:space="preserve"><value>Nội dung</value></data>
+  <data name="Template_DeleteBody" xml:space="preserve"><value>Xóa mẫu "{0}"?</value></data>
+  <data name="Template_DeleteTitle" xml:space="preserve"><value>Xóa mẫu tin</value></data>
+  <data name="Template_IsAd" xml:space="preserve"><value>Dùng làm tin quảng cáo</value></data>
+  <data name="Template_Name" xml:space="preserve"><value>Tên mẫu</value></data>
+  <data name="Template_New" xml:space="preserve"><value>Mẫu mới</value></data>
+  <data name="Template_NewName" xml:space="preserve"><value>Mẫu mới</value></data>
+  <data name="Template_Saved" xml:space="preserve"><value>Đã lưu mẫu tin.</value></data>
+  <data name="Template_SelectHint" xml:space="preserve"><value>Chọn một mẫu bên trái hoặc tạo mẫu mới.</value></data>
+  <data name="Template_Subject" xml:space="preserve"><value>Tiêu đề (không bắt buộc)</value></data>
+  <data name="Template_Subtitle" xml:space="preserve"><value>Lưu các nội dung hay gửi để dùng lại khi gửi tin.</value></data>
+  <data name="Template_Title" xml:space="preserve"><value>Mẫu tin</value></data>
+</root>

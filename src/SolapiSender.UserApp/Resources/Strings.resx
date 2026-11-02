@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
+  <data name="BulkSend_AddPasted" xml:space="preserve"><value>목록에 추가</value></data>
+  <data name="BulkSend_Clear" xml:space="preserve"><value>전체 삭제</value></data>
+  <data name="BulkSend_ImportExcel" xml:space="preserve"><value>엑셀 불러오기</value></data>
+  <data name="BulkSend_Paste" xml:space="preserve"><value>직접 붙여넣기</value></data>
+  <data name="BulkSend_PasteHint" xml:space="preserve"><value>한 줄에 번호 하나씩 입력하세요. "번호,이름" 형식도 가능합니다.
+예) 010-1234-5678,홍길동</value></data>
+  <data name="BulkSend_PickTemplate" xml:space="preserve"><value>저장된 문구 불러오기</value></data>
+  <data name="BulkSend_RemoveInvalid" xml:space="preserve"><value>오류·중복 제거</value></data>
+  <data name="BulkSend_Step1" xml:space="preserve"><value>① 받는 사람</value></data>
+  <data name="BulkSend_Step2" xml:space="preserve"><value>② 메시지 작성</value></data>
+  <data name="BulkSend_Step3" xml:space="preserve"><value>③ 발송</value></data>
+  <data name="BulkSend_Subtitle" xml:space="preserve"><value>엑셀이나 붙여넣기로 받는 사람을 추가하고, 메시지를 작성해 바로 보내거나 예약하세요.</value></data>
+  <data name="BulkSend_Title" xml:space="preserve"><value>단체 문자 발송</value></data>
+  <data name="BulkSend_Total" xml:space="preserve"><value>전체</value></data>
+  <data name="Col_Code" xml:space="preserve"><value>코드</value></data>
+  <data name="Col_Cost" xml:space="preserve"><value>비용</value></data>
+  <data name="Col_Date" xml:space="preserve"><value>일시</value></data>
+  <data name="Col_Failed" xml:space="preserve"><value>실패</value></data>
+  <data name="Col_From" xml:space="preserve"><value>발신번호</value></data>
+  <data name="Col_Message" xml:space="preserve"><value>내용</value></data>
+  <data name="Col_Name" xml:space="preserve"><value>이름</value></data>
+  <data name="Col_Phone" xml:space="preserve"><value>전화번호</value></data>
+  <data name="Col_Reason" xml:space="preserve"><value>사유</value></data>
+  <data name="Col_Result" xml:space="preserve"><value>결과</value></data>
+  <data name="Col_Status" xml:space="preserve"><value>상태</value></data>
+  <data name="Col_Success" xml:space="preserve"><value>성공</value></data>
+  <data name="Col_Total" xml:space="preserve"><value>전체</value></data>
+  <data name="Col_Type" xml:space="preserve"><value>유형</value></data>
+  <data name="Common_Cancel" xml:space="preserve"><value>취소</value></data>
+  <data name="Common_Delete" xml:space="preserve"><value>삭제</value></data>
+  <data name="Common_Done" xml:space="preserve"><value>완료</value></data>
+  <data name="Common_Empty" xml:space="preserve"><value>표시할 내용이 없습니다.</value></data>
+  <data name="Common_Error" xml:space="preserve"><value>오류</value></data>
+  <data name="Common_ExportExcel" xml:space="preserve"><value>엑셀로 저장</value></data>
+  <data name="Common_Exported" xml:space="preserve"><value>엑셀 파일로 저장했습니다.</value></data>
+  <data name="Common_Info" xml:space="preserve"><value>알림</value></data>
+  <data name="Common_OK" xml:space="preserve"><value>확인</value></data>
+  <data name="Common_Refresh" xml:space="preserve"><value>새로고침</value></data>
+  <data name="Common_Save" xml:space="preserve"><value>저장</value></data>
+  <data name="Compose_AdHint" xml:space="preserve"><value>켜면 맨 앞에 "(광고)상호명", 맨 끝에 "무료거부 080…"이 자동으로 붙고, 밤 9시~아침 8시에는 발송할 수 없습니다.</value></data>
+  <data name="Compose_AdMode" xml:space="preserve"><value>광고 문자</value></data>
+  <data name="Compose_AdName" xml:space="preserve"><value>표시할 상호명</value></data>
+  <data name="Compose_AttachImage" xml:space="preserve"><value>사진 첨부 (JPG, 200KB 이하)</value></data>
+  <data name="Compose_Cost" xml:space="preserve"><value>{0:N0}건 (SMS {1:N0} · LMS {2:N0} · MMS {3:N0}) · 예상 비용 {4:N0}원</value></data>
+  <data name="Compose_ImageFormat" xml:space="preserve"><value>JPG 사진만 첨부할 수 있습니다.</value></data>
+  <data name="Compose_ImageTooLarge" xml:space="preserve"><value>사진 용량이 200KB를 넘습니다. 크기를 줄여 주세요.</value></data>
+  <data name="Compose_InsertVariable" xml:space="preserve"><value>변수 넣기</value></data>
+  <data name="Compose_OptOut" xml:space="preserve"><value>080 수신거부 번호</value></data>
+  <data name="Compose_Preview" xml:space="preserve"><value>미리보기 (첫 번째 받는 사람 기준)</value></data>
+  <data name="Compose_SampleName" xml:space="preserve"><value>홍길동</value></data>
+  <data name="Compose_SubjectHint" xml:space="preserve"><value>제목 (LMS/MMS만, 선택)</value></data>
+  <data name="Compose_TextHint" xml:space="preserve"><value>보낼 내용을 입력하세요. #{이름} 을 넣으면 받는 사람 이름으로 바뀝니다.</value></data>
+  <data name="Compose_TooLong" xml:space="preserve"><value>메시지가 2,000byte를 넘습니다. 내용을 줄여 주세요.</value></data>
+  <data name="Compose_Unsupported" xml:space="preserve"><value>다음 문자는 휴대폰에서 깨질 수 있습니다: {0}</value></data>
+  <data name="Connect_Cancel" xml:space="preserve"><value>나중에 (로그아웃)</value></data>
+  <data name="Connect_HowTo" xml:space="preserve"><value>API Key는 어디서 받나요?</value></data>
+  <data name="Connect_HowToSteps" xml:space="preserve"><value>1. SOLAPI 콘솔에 로그인합니다.
+2. [개발/연동] → [API Key 관리]에서 새 API Key를 만듭니다.
+3. API Key와 API Secret을 아래에 붙여넣습니다.</value></data>
+  <data name="Connect_OpenConsole" xml:space="preserve"><value>SOLAPI 콘솔 열기</value></data>
+  <data name="Connect_Security" xml:space="preserve"><value>API Secret은 이 PC에만 암호화되어 저장되며 서버로 전송되지 않습니다.</value></data>
+  <data name="Connect_Subtitle" xml:space="preserve"><value>문자 발송을 위해 SOLAPI 계정을 연결합니다. 잔액 조회로 키를 확인한 뒤 저장합니다.</value></data>
+  <data name="Connect_Success" xml:space="preserve"><value>연결되었습니다. 잔액 {0:N0}원 · 포인트 {1:N0}P</value></data>
+  <data name="Connect_Title" xml:space="preserve"><value>SOLAPI 연결</value></data>
+  <data name="Connect_Verify" xml:space="preserve"><value>확인 후 저장</value></data>
+  <data name="Dashboard_Balance" xml:space="preserve"><value>잔액</value></data>
+  <data name="Dashboard_Charge" xml:space="preserve"><value>충전하기 →</value></data>
+  <data name="Dashboard_Failed" xml:space="preserve"><value>실패</value></data>
+  <data name="Dashboard_Greeting" xml:space="preserve"><value>안녕하세요, {0}님</value></data>
+  <data name="Dashboard_LowBalance" xml:space="preserve"><value>잔액(포인트 포함)이 설정한 기준 {0:N0}원보다 적습니다. 발송 전에 충전해 주세요.</value></data>
+  <data name="Dashboard_LowBalanceTitle" xml:space="preserve"><value>잔액 부족</value></data>
+  <data name="Dashboard_Month" xml:space="preserve"><value>이번 달 발송</value></data>
+  <data name="Dashboard_MonthHint" xml:space="preserve"><value>1일부터 오늘까지</value></data>
+  <data name="Dashboard_Point" xml:space="preserve"><value>포인트</value></data>
+  <data name="Dashboard_Recent" xml:space="preserve"><value>최근 발송</value></data>
+  <data name="Dashboard_Subtitle" xml:space="preserve"><value>오늘의 발송 현황과 잔액을 한눈에 확인하세요.</value></data>
+  <data name="Dashboard_SuccessRate" xml:space="preserve"><value>이번 달 성공률</value></data>
+  <data name="Dashboard_Today" xml:space="preserve"><value>오늘 발송</value></data>
+  <data name="Err_Cancelled" xml:space="preserve"><value>작업을 취소했습니다.</value></data>
+  <data name="Err_FirebaseNotConfigured" xml:space="preserve"><value>서버 설정이 되어 있지 않습니다. 관리자에게 문의하세요. (appsettings.json)</value></data>
+  <data name="Err_Login_DeviceLimit" xml:space="preserve"><value>등록 가능한 PC 수({0}대)를 초과했습니다. 관리자에게 기기 초기화를 요청하세요.</value></data>
+  <data name="Err_Login_Expired" xml:space="preserve"><value>사용 기간이 {0}에 만료되었습니다. 관리자에게 연장을 요청하세요.</value></data>
+  <data name="Err_Login_Invalid" xml:space="preserve"><value>이메일 또는 비밀번호가 올바르지 않습니다.</value></data>
+  <data name="Err_Login_Locked" xml:space="preserve"><value>사용이 중지된 계정입니다. 관리자에게 문의하세요.</value></data>
+  <data name="Err_Login_NotProvisioned" xml:space="preserve"><value>계정 정보가 등록되지 않았습니다. 관리자에게 문의하세요.</value></data>
+  <data name="Err_Login_TooMany" xml:space="preserve"><value>로그인 시도가 너무 많습니다. 잠시 후 다시 시도하세요.</value></data>
+  <data name="Err_Network" xml:space="preserve"><value>인터넷 연결을 확인해 주세요.</value></data>
+  <data name="Err_PermissionDenied" xml:space="preserve"><value>권한이 없습니다. 계정 상태를 확인해 주세요.</value></data>
+  <data name="Err_SessionExpired" xml:space="preserve"><value>로그인이 만료되었습니다. 다시 로그인해 주세요.</value></data>
+  <data name="Err_Solapi_Balance" xml:space="preserve"><value>SOLAPI 잔액이 부족합니다. 충전 후 다시 시도하세요.</value></data>
+  <data name="Err_Solapi_ClockSkew" xml:space="preserve"><value>PC 시간이 맞지 않습니다. Windows 시간 동기화를 켜 주세요.</value></data>
+  <data name="Err_Solapi_Forbidden" xml:space="preserve"><value>이 API Key로는 해당 기능을 사용할 수 없습니다.</value></data>
+  <data name="Err_Solapi_Invalid" xml:space="preserve"><value>요청 내용이 올바르지 않습니다.</value></data>
+  <data name="Err_Solapi_InvalidKey" xml:space="preserve"><value>API Key 또는 Secret이 올바르지 않습니다.</value></data>
+  <data name="Err_Solapi_RateLimit" xml:space="preserve"><value>요청이 너무 많습니다. 잠시 후 다시 시도하세요.</value></data>
+  <data name="Err_Solapi_Sender" xml:space="preserve"><value>등록되지 않은 발신번호입니다. SOLAPI에서 발신번호를 등록해 주세요.</value></data>
+  <data name="Err_Solapi_Server" xml:space="preserve"><value>SOLAPI 서버에 일시적인 문제가 있습니다. 잠시 후 다시 시도하세요.</value></data>
+  <data name="Err_Timeout" xml:space="preserve"><value>응답 시간이 초과되었습니다. 발송 내역에서 결과를 확인하세요.</value></data>
+  <data name="Err_Unknown" xml:space="preserve"><value>알 수 없는 오류가 발생했습니다. 로그 폴더를 확인해 주세요.</value></data>
+  <data name="File_ExcelFilter" xml:space="preserve"><value>엑셀/CSV 파일|*.xlsx;*.csv</value></data>
+  <data name="File_JpgFilter" xml:space="preserve"><value>JPG 사진|*.jpg;*.jpeg</value></data>
+  <data name="File_XlsxFilter" xml:space="preserve"><value>엑셀 파일|*.xlsx</value></data>
+  <data name="GroupStatus_COMPLETE" xml:space="preserve"><value>완료</value></data>
+  <data name="GroupStatus_FAILED" xml:space="preserve"><value>실패</value></data>
+  <data name="GroupStatus_PENDING" xml:space="preserve"><value>대기</value></data>
+  <data name="GroupStatus_SCHEDULED" xml:space="preserve"><value>예약됨</value></data>
+  <data name="GroupStatus_SENDING" xml:space="preserve"><value>발송 중</value></data>
+  <data name="History_Err_Range" xml:space="preserve"><value>종료일이 시작일보다 빠릅니다.</value></data>
+  <data name="History_From" xml:space="preserve"><value>시작일</value></data>
+  <data name="History_LoadMore" xml:space="preserve"><value>더 보기</value></data>
+  <data name="History_PhoneHint" xml:space="preserve"><value>번호 검색</value></data>
+  <data name="History_Search" xml:space="preserve"><value>조회</value></data>
+  <data name="History_Status_All" xml:space="preserve"><value>전체</value></data>
+  <data name="History_Status_Failed" xml:space="preserve"><value>실패</value></data>
+  <data name="History_Status_Pending" xml:space="preserve"><value>처리 중</value></data>
+  <data name="History_Status_Success" xml:space="preserve"><value>성공</value></data>
+  <data name="History_Subtitle" xml:space="preserve"><value>SOLAPI에 기록된 발송 결과를 기간·상태별로 조회하고 엑셀로 저장할 수 있습니다.</value></data>
+  <data name="History_Tab_Groups" xml:space="preserve"><value>발송 건(그룹)</value></data>
+  <data name="History_Tab_Messages" xml:space="preserve"><value>메시지별</value></data>
+  <data name="History_Title" xml:space="preserve"><value>발송 내역</value></data>
+  <data name="History_To" xml:space="preserve"><value>종료일</value></data>
+  <data name="Import_Add" xml:space="preserve"><value>받는 사람 추가</value></data>
+  <data name="Import_HasHeader" xml:space="preserve"><value>첫 줄은 제목 행</value></data>
+  <data name="Import_NameColumn" xml:space="preserve"><value>이름 열</value></data>
+  <data name="Import_None" xml:space="preserve"><value>(사용 안 함)</value></data>
+  <data name="Import_PhoneColumn" xml:space="preserve"><value>전화번호 열</value></data>
+  <data name="Import_ReadError" xml:space="preserve"><value>파일을 읽을 수 없습니다: {0}</value></data>
+  <data name="Import_Sheet" xml:space="preserve"><value>시트</value></data>
+  <data name="Import_Stats" xml:space="preserve"><value>전체 {0:N0} · 정상 {1:N0} · 오류 {2:N0} · 중복 {3:N0}</value></data>
+  <data name="Import_Title" xml:space="preserve"><value>엑셀 불러오기</value></data>
+  <data name="Import_VariableColumns" xml:space="preserve"><value>변수로 쓸 열</value></data>
+  <data name="Import_VariableHint" xml:space="preserve"><value>체크한 열은 #{열 이름} 으로 문자에 넣을 수 있습니다.</value></data>
+  <data name="Login_Button" xml:space="preserve"><value>로그인</value></data>
+  <data name="Login_Email" xml:space="preserve"><value>이메일</value></data>
+  <data name="Login_Feature1" xml:space="preserve"><value>엑셀 고객 명단으로 한 번에 발송</value></data>
+  <data name="Login_Feature2" xml:space="preserve"><value>원하는 시간에 예약 발송</value></data>
+  <data name="Login_Feature3" xml:space="preserve"><value>광고 문자 규정 자동 적용</value></data>
+  <data name="Login_Help" xml:space="preserve"><value>계정이 없으신가요? 관리자에게 문의하세요.</value></data>
+  <data name="Login_Password" xml:space="preserve"><value>비밀번호</value></data>
+  <data name="Login_Remember" xml:space="preserve"><value>로그인 상태 유지</value></data>
+  <data name="Login_Subtitle" xml:space="preserve"><value>관리자에게 받은 계정으로 로그인하세요.</value></data>
+  <data name="Login_Tagline" xml:space="preserve"><value>휴대폰 매장을 위한
+가장 쉬운 단체 문자 발송</value></data>
+  <data name="Login_Title" xml:space="preserve"><value>로그인</value></data>
+  <data name="Main_ExpiresIn" xml:space="preserve"><value>{0}까지 사용 ({1}일 남음)</value></data>
+  <data name="Nav_BulkSend" xml:space="preserve"><value>단체 발송</value></data>
+  <data name="Nav_Dashboard" xml:space="preserve"><value>대시보드</value></data>
+  <data name="Nav_History" xml:space="preserve"><value>발송 내역</value></data>
+  <data name="Nav_SenderNumbers" xml:space="preserve"><value>발신번호</value></data>
+  <data name="Nav_Settings" xml:space="preserve"><value>설정</value></data>
+  <data name="Nav_Templates" xml:space="preserve"><value>문구 관리</value></data>
+  <data name="Recipient_Duplicate" xml:space="preserve"><value>중복</value></data>
+  <data name="Recipient_Invalid" xml:space="preserve"><value>오류</value></data>
+  <data name="Recipient_Valid" xml:space="preserve"><value>정상</value></data>
+  <data name="Send_Button" xml:space="preserve"><value>발송하기</value></data>
+  <data name="Send_CannotSend" xml:space="preserve"><value>발송할 수 없습니다</value></data>
+  <data name="Send_ConfirmBody" xml:space="preserve"><value>{0:N0}명에게 문자를 보냅니다.
+
+발신번호: {1}
+발송 시각: {2}
+구성: SMS {3:N0} · LMS {4:N0} · MMS {5:N0}
+예상 비용: {6:N0}원</value></data>
+  <data name="Send_ConfirmLowBalance" xml:space="preserve"><value>⚠ 현재 잔액 {0:N0}원으로는 부족할 수 있습니다.</value></data>
+  <data name="Send_ConfirmTitle" xml:space="preserve"><value>발송 확인</value></data>
+  <data name="Send_Done" xml:space="preserve"><value>발송 요청이 접수되었습니다.</value></data>
+  <data name="Send_Err_NoRecipients" xml:space="preserve"><value>정상 번호가 있는 받는 사람을 추가해 주세요.</value></data>
+  <data name="Send_Err_NoSender" xml:space="preserve"><value>발신번호를 선택해 주세요.</value></data>
+  <data name="Send_Err_NoText" xml:space="preserve"><value>메시지 내용을 입력해 주세요.</value></data>
+  <data name="Send_Err_OptOut" xml:space="preserve"><value>광고 문자는 080 수신거부 번호가 필요합니다.</value></data>
+  <data name="Send_Err_QuietHours" xml:space="preserve"><value>광고 문자는 밤 9시~아침 8시에 보낼 수 없습니다. {0} 이후로 예약해 주세요.</value></data>
+  <data name="Send_Err_ScheduleTooSoon" xml:space="preserve"><value>예약 시각은 지금부터 10분 이후로 설정해 주세요.</value></data>
+  <data name="Send_From" xml:space="preserve"><value>발신번호</value></data>
+  <data name="Send_Now" xml:space="preserve"><value>즉시 발송</value></data>
+  <data name="Send_Progress" xml:space="preserve"><value>{0:N0} / {1:N0}건 처리 중 (묶음 {2}/{3})</value></data>
+  <data name="Send_ResultSheet" xml:space="preserve"><value>발송 결과</value></data>
+  <data name="Send_ResultSummary" xml:space="preserve"><value>접수 {0:N0}건 · 거부 {1:N0}건 · 미발송 {2:N0}건</value></data>
+  <data name="Send_Results" xml:space="preserve"><value>발송 결과</value></data>
+  <data name="Send_Schedule" xml:space="preserve"><value>예약 발송</value></data>
+  <data name="Send_Scheduled" xml:space="preserve"><value>예약이 등록되었습니다.</value></data>
+  <data name="Send_State_Accepted" xml:space="preserve"><value>접수</value></data>
+  <data name="Send_State_NotSent" xml:space="preserve"><value>미발송</value></data>
+  <data name="Send_State_Rejected" xml:space="preserve"><value>거부</value></data>
+  <data name="Send_Stopped" xml:space="preserve"><value>발송이 중단되었습니다</value></data>
+  <data name="Send_UploadingImage" xml:space="preserve"><value>사진 업로드 중…</value></data>
+  <data name="Sender_Default" xml:space="preserve"><value>기본</value></data>
+  <data name="Sender_DefaultBadge" xml:space="preserve"><value>문자 발송 시 자동으로 선택됩니다.</value></data>
+  <data name="Sender_DefaultSet" xml:space="preserve"><value>{0} 번호를 기본 발신번호로 설정했습니다.</value></data>
+  <data name="Sender_Empty" xml:space="preserve"><value>SOLAPI에 등록된 발신번호가 없습니다. 아래 안내에 따라 먼저 등록해 주세요.</value></data>
+  <data name="Sender_EmptyTitle" xml:space="preserve"><value>발신번호 없음</value></data>
+  <data name="Sender_HowTo" xml:space="preserve"><value>전기통신사업법에 따라 사전에 등록된 번호로만 문자를 보낼 수 있습니다.
+SOLAPI 콘솔 → [발신번호 관리]에서 번호를 등록하고 인증을 마치면 이 목록에 나타납니다.</value></data>
+  <data name="Sender_HowToTitle" xml:space="preserve"><value>발신번호 등록 안내</value></data>
+  <data name="Sender_OpenConsole" xml:space="preserve"><value>발신번호 등록하러 가기</value></data>
+  <data name="Sender_SetDefault" xml:space="preserve"><value>기본으로 설정</value></data>
+  <data name="Sender_Subtitle" xml:space="preserve"><value>SOLAPI에 등록·인증된 발신번호만 사용할 수 있습니다. 자주 쓰는 번호를 기본으로 지정하세요.</value></data>
+  <data name="Sender_Title" xml:space="preserve"><value>발신번호</value></data>
+  <data name="Settings_Account" xml:space="preserve"><value>계정 정보</value></data>
+  <data name="Settings_Appearance" xml:space="preserve"><value>화면</value></data>
+  <data name="Settings_ChangeKey" xml:space="preserve"><value>API Key 변경</value></data>
+  <data name="Settings_Devices" xml:space="preserve"><value>등록된 PC</value></data>
+  <data name="Settings_Expires" xml:space="preserve"><value>사용 기한</value></data>
+  <data name="Settings_Language" xml:space="preserve"><value>언어</value></data>
+  <data name="Settings_Logout" xml:space="preserve"><value>로그아웃</value></data>
+  <data name="Settings_LogoutConfirm" xml:space="preserve"><value>로그아웃하시겠습니까? 다음 실행 시 다시 로그인해야 합니다.</value></data>
+  <data name="Settings_LowBalance" xml:space="preserve"><value>잔액 부족 알림 기준 (원)</value></data>
+  <data name="Settings_OpenLogs" xml:space="preserve"><value>로그 폴더 열기</value></data>
+  <data name="Settings_Prices" xml:space="preserve"><value>건당 단가 (원, 예상 비용 계산용)</value></data>
+  <data name="Settings_PricesHint" xml:space="preserve"><value>SOLAPI 계약 단가에 맞게 입력하세요. 실제 차감 금액은 SOLAPI 기준입니다.</value></data>
+  <data name="Settings_Saved" xml:space="preserve"><value>설정을 저장했습니다.</value></data>
+  <data name="Settings_Sending" xml:space="preserve"><value>발송 설정</value></data>
+  <data name="Settings_Store" xml:space="preserve"><value>상호명</value></data>
+  <data name="Settings_Subtitle" xml:space="preserve"><value>화면, 언어, 발송 기본값과 계정을 관리합니다.</value></data>
+  <data name="Settings_Theme" xml:space="preserve"><value>테마</value></data>
+  <data name="Settings_Theme_Dark" xml:space="preserve"><value>어둡게</value></data>
+  <data name="Settings_Theme_Light" xml:space="preserve"><value>밝게</value></data>
+  <data name="Settings_Theme_System" xml:space="preserve"><value>시스템 설정</value></data>
+  <data name="Settings_Title" xml:space="preserve"><value>설정</value></data>
+  <data name="Settings_Version" xml:space="preserve"><value>버전</value></data>
+  <data name="Template_AdBadge" xml:space="preserve"><value>광고</value></data>
+  <data name="Template_Content" xml:space="preserve"><value>내용</value></data>
+  <data name="Template_DeleteBody" xml:space="preserve"><value>"{0}" 문구를 삭제할까요?</value></data>
+  <data name="Template_DeleteTitle" xml:space="preserve"><value>문구 삭제</value></data>
+  <data name="Template_IsAd" xml:space="preserve"><value>광고 문자로 사용</value></data>
+  <data name="Template_Name" xml:space="preserve"><value>문구 이름</value></data>
+  <data name="Template_New" xml:space="preserve"><value>새 문구</value></data>
+  <data name="Template_NewName" xml:space="preserve"><value>새 문구</value></data>
+  <data name="Template_Saved" xml:space="preserve"><value>문구를 저장했습니다.</value></data>
+  <data name="Template_SelectHint" xml:space="preserve"><value>왼쪽에서 문구를 선택하거나 새 문구를 만드세요.</value></data>
+  <data name="Template_Subject" xml:space="preserve"><value>제목 (선택)</value></data>
+  <data name="Template_Subtitle" xml:space="preserve"><value>자주 보내는 문구를 저장해 두고 발송 화면에서 불러올 수 있습니다.</value></data>
+  <data name="Template_Title" xml:space="preserve"><value>문구 관리</value></data>
+</root>

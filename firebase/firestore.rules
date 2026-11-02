@@ -1,0 +1,134 @@
+rules_version = '2';
+
+// ============================================================================
+// SolapiSender — Firestore Security Rules
+//
+// • UserApp truy cập bằng Firebase ID token của chủ quán → chịu các rules dưới đây.
+// • AdminTool dùng Firebase Admin SDK (service account) → BỎ QUA rules hoàn toàn.
+//
+// Nguyên tắc:
+//   - Người dùng chỉ đọc/ghi dữ liệu dưới users/{uid} của chính mình.
+//   - users/{uid} chỉ đọc; ngoại lệ duy nhất là thêm đúng 1 machineId vào deviceIds
+//     khi đăng ký PC mới (giới hạn bởi maxDevices).
+//   - Tài khoản bị khóa / hết hạn không đọc ghi được dữ liệu con (templates, settings…).
+// ============================================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function userPath(uid) {
+      return /databases/$(database)/documents/users/$(uid);
+    }
+
+    // Trạng thái active và chưa hết hạn (đọc users/{uid}, tính 1 lượt đọc).
+    function isActive(uid) {
+      let p = get(userPath(uid)).data;
+      return p.status == 'active' && p.expiresAt > request.time;
+    }
+
+    function onlyChanges(keys) {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly(keys);
+    }
+
+    // ------------------------------------------------------------------ admins
+    // Chỉ Admin SDK (bỏ qua rules) được truy cập.
+    match /admins/{document=**} {
+      allow read, write: if false;
+    }
+
+    // ------------------------------------------------------------------ users
+    match /users/{uid} {
+      // Đọc hồ sơ của chính mình kể cả khi bị khóa/hết hạn (để app hiển thị lý do).
+      allow get: if isOwner(uid);
+      allow list, create, delete: if false;
+
+      // Đăng ký PC mới: deviceIds thêm đúng 1 phần tử, không vượt maxDevices,
+      // và devices/{phần tử mới} phải được tạo trong cùng batch.
+      allow update: if isOwner(uid)
+        && isActive(uid)
+        && onlyChanges(['deviceIds'])
+        && request.resource.data.deviceIds is list
+        && request.resource.data.deviceIds.size() == resource.data.deviceIds.size() + 1
+        && request.resource.data.deviceIds.hasAll(resource.data.deviceIds)
+        && request.resource.data.deviceIds.size() <= resource.data.maxDevices
+        && existsAfter(/databases/$(database)/documents/users/$(uid)/devices/$(
+             request.resource.data.deviceIds.removeAll(resource.data.deviceIds)[0]));
+
+      // -------------------------------------------------------------- devices
+      match /devices/{deviceId} {
+        allow get: if isOwner(uid);
+        allow list, delete: if false;
+
+        // Chỉ tạo được khi machineId này đồng thời được thêm vào deviceIds (rule update ở trên).
+        allow create: if isOwner(uid)
+          && isActive(uid)
+          && !(deviceId in get(userPath(uid)).data.deviceIds)
+          && deviceId in getAfter(userPath(uid)).data.deviceIds
+          && request.resource.data.keys().hasOnly(['machineName', 'appVersion', 'firstSeenAt', 'lastSeenAt'])
+          && request.resource.data.machineName is string
+          && request.resource.data.machineName.size() <= 100
+          && request.resource.data.appVersion is string
+          && request.resource.data.appVersion.size() <= 30;
+
+        allow update: if isOwner(uid)
+          && isActive(uid)
+          && onlyChanges(['lastSeenAt', 'appVersion', 'machineName'])
+          && request.resource.data.machineName is string
+          && request.resource.data.machineName.size() <= 100
+          && request.resource.data.appVersion is string
+          && request.resource.data.appVersion.size() <= 30;
+      }
+
+      // ------------------------------------------------------------ templates
+      function validTemplate() {
+        let d = request.resource.data;
+        return d.keys().hasOnly(['name', 'content', 'subject', 'isAd', 'createdAt', 'updatedAt'])
+          && d.name is string && d.name.size() > 0 && d.name.size() <= 100
+          && d.content is string && d.content.size() <= 4000
+          && (!('subject' in d) || d.subject == null || (d.subject is string && d.subject.size() <= 100))
+          && (!('isAd' in d) || d.isAd is bool);
+      }
+
+      match /templates/{templateId} {
+        allow read, delete: if isOwner(uid) && isActive(uid);
+        allow create, update: if isOwner(uid) && isActive(uid) && validTemplate();
+      }
+
+      // ------------------------------------------------------------- settings
+      match /settings/{docId} {
+        allow read: if isOwner(uid) && isActive(uid) && docId == 'app';
+        allow write: if isOwner(uid) && isActive(uid) && docId == 'app'
+          && request.resource.data.keys().hasOnly([
+               'defaultSender', 'lowBalanceThreshold', 'optOutNumber',
+               'priceSms', 'priceLms', 'priceMms', 'updatedAt']);
+      }
+
+      // ----------------------------------------------------------------- logs
+      // Chỉ ghi thêm (append-only); không đọc/sửa/xóa. Admin đọc bằng Admin SDK.
+      // Không yêu cầu isActive để vẫn ghi được log khi bị đăng xuất do khóa/hết hạn.
+      match /logs/{logId} {
+        allow read, update, delete: if false;
+        allow create: if isOwner(uid)
+          && request.resource.data.keys().hasOnly(['type', 'message', 'meta', 'machineId', 'createdAt'])
+          && request.resource.data.type is string && request.resource.data.type.size() <= 30
+          && request.resource.data.message is string && request.resource.data.message.size() <= 1000
+          && request.resource.data.machineId is string && request.resource.data.machineId.size() <= 64
+          && request.resource.data.createdAt is timestamp
+          && (!('meta' in request.resource.data) || request.resource.data.meta is map);
+      }
+    }
+
+    // Mọi đường dẫn khác: từ chối.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

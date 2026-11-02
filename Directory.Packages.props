@@ -1,0 +1,23 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Core -->
+    <PackageVersion Include="ClosedXML" Version="0.104.2" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
+    <PackageVersion Include="System.Security.Cryptography.ProtectedData" Version="8.0.0" />
+    <!-- UI -->
+    <PackageVersion Include="WPF-UI" Version="3.0.5" />
+    <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+    <!-- AdminTool (chỉ dành cho dev, không đóng gói vào UserApp) -->
+    <PackageVersion Include="FirebaseAdmin" Version="3.1.0" />
+    <PackageVersion Include="Google.Cloud.Firestore" Version="3.9.0" />
+    <!-- Tests -->
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageVersion Include="xunit" Version="2.9.2" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="2.8.2" />
+    <PackageVersion Include="Xunit.SkippableFact" Version="1.4.13" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,98 @@
+<Page
+    x:Class="SolapiSender.UserApp.Views.Pages.SenderNumbersPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:l="clr-namespace:SolapiSender.UserApp.Localization"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:vm="clr-namespace:SolapiSender.UserApp.ViewModels.Pages"
+    d:DataContext="{d:DesignInstance vm:SenderNumbersViewModel}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel MaxWidth="900" Margin="32,24,32,32" HorizontalAlignment="Left">
+            <Grid>
+                <StackPanel>
+                    <TextBlock Style="{StaticResource PageTitle}" Text="{l:Loc Sender_Title}" />
+                    <TextBlock Style="{StaticResource PageSubtitle}" Text="{l:Loc Sender_Subtitle}" />
+                </StackPanel>
+                <ui:Button
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Command="{Binding RefreshCommand}"
+                    Content="{l:Loc Common_Refresh}"
+                    Icon="{ui:SymbolIcon ArrowSync24}" />
+            </Grid>
+
+            <ui:InfoBar
+                Margin="0,0,0,12"
+                IsClosable="False"
+                IsOpen="{Binding ErrorMessage, Converter={StaticResource HasText}, Mode=OneWay}"
+                Message="{Binding ErrorMessage}"
+                Severity="Error" />
+            <ui:InfoBar
+                Title="{l:Loc Sender_EmptyTitle}"
+                Margin="0,0,0,12"
+                IsClosable="False"
+                IsOpen="{Binding IsEmpty, Mode=OneWay}"
+                Message="{l:Loc Sender_Empty}"
+                Severity="Informational" />
+
+            <ItemsControl ItemsSource="{Binding Rows}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="{x:Type vm:SenderRow}">
+                        <ui:CardControl Margin="0,0,0,8" Icon="{ui:SymbolIcon Phone24}">
+                            <ui:CardControl.Header>
+                                <StackPanel>
+                                    <TextBlock FontSize="16" FontWeight="SemiBold" Text="{Binding Display}" />
+                                    <TextBlock
+                                        Style="{StaticResource Caption}"
+                                        Text="{l:Loc Sender_DefaultBadge}"
+                                        Visibility="{Binding IsDefault, Converter={StaticResource BoolToVisibility}}" />
+                                </StackPanel>
+                            </ui:CardControl.Header>
+                            <Grid>
+                                <Border Style="{StaticResource Pill}" Visibility="{Binding IsDefault, Converter={StaticResource BoolToVisibility}}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <ui:SymbolIcon
+                                            Margin="0,0,4,0"
+                                            Filled="True"
+                                            FontSize="14"
+                                            Foreground="{DynamicResource TextOnAccentFillColorPrimaryBrush}"
+                                            Symbol="Star24" />
+                                        <TextBlock Style="{StaticResource PillText}" Text="{l:Loc Sender_Default}" />
+                                    </StackPanel>
+                                </Border>
+                                <ui:Button
+                                    Command="{Binding DataContext.SetDefaultCommand, RelativeSource={RelativeSource AncestorType=Page}}"
+                                    CommandParameter="{Binding}"
+                                    Content="{l:Loc Sender_SetDefault}"
+                                    Icon="{ui:SymbolIcon Star24}"
+                                    Visibility="{Binding IsDefault, Converter={StaticResource BoolToCollapsed}}" />
+                            </Grid>
+                        </ui:CardControl>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <Border Margin="0,12,0,0" Style="{StaticResource Card}">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <ui:SymbolIcon Margin="0,0,8,0" Symbol="Info24" />
+                        <TextBlock Style="{StaticResource SectionTitle}" Margin="0" Text="{l:Loc Sender_HowToTitle}" />
+                    </StackPanel>
+                    <TextBlock
+                        Margin="0,8,0,10"
+                        LineHeight="20"
+                        Style="{StaticResource Caption}"
+                        Text="{l:Loc Sender_HowTo}" />
+                    <ui:Button
+                        Command="{Binding OpenConsoleCommand}"
+                        Content="{l:Loc Sender_OpenConsole}"
+                        Icon="{ui:SymbolIcon Open24}" />
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
