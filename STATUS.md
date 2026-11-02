@@ -117,4 +117,4 @@ dotnet run --project src/SolapiSender.AdminTool -- --preview   # admin / admin �
 5. Khóa đăng nhập admin chỉ trong bộ nhớ (có thể lưu `failedAttempts` lên Firestore nếu cần).
 6. Một tiến trình Java (emulator cũ) giữ cổng 8080 trên máy dev — không tắt được do quyền; emulator Firestore đã chuyển sang **8085** trong `firebase/firebase.json`.
 7. `%LOCALAPPDATA%\SolapiSender\` trên máy dev có dữ liệu do chế độ preview tạo (`settings.json`, `secure\solapi-preview-user.bin`) — có thể xóa.
-8. Chưa khởi tạo git repo (thư mục chưa phải git repository).
+8. Git: đã init (nhánh `main`), remote `origin` = git@github.com:diemchu/sms-project.git. **Chưa push được** — máy chưa có SSH key được GitHub chấp nhận (`Permission denied (publickey)`).
