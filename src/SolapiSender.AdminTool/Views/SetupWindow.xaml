@@ -23,7 +23,7 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <ui:TitleBar Title="SolapiSender Admin" ShowMaximize="False" />
+        <ui:TitleBar Title="SMS_DiemDev Admin" ShowMaximize="False" />
 
         <StackPanel Grid.Row="1" Margin="40,8,40,32">
             <Border Width="52" Height="52" HorizontalAlignment="Left" Background="#FFA000" CornerRadius="14">

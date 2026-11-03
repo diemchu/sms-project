@@ -34,8 +34,8 @@ src/SolapiSender.Core        Thư viện dùng chung (không UI)
   Firebase/    FirebaseAuthService (REST), FirestoreService (REST) + FirestoreMapper, LicenseService, ActivityLogService
   Security/    DpapiStore, MachineId, PasswordHasher (PBKDF2), AppPaths
   Excel/       ExcelService (xlsx/csv UTF-8/CP949, export)
-src/SolapiSender.UserApp     exe "SolapiSender.exe" cho chủ quán (ko mặc định + vi, resx)
-src/SolapiSender.AdminTool   exe "SolapiSenderAdmin.exe" chỉ cho dev (Admin SDK, giao diện tiếng Việt)
+src/SolapiSender.UserApp     exe "SMS_DiemDev.exe" cho chủ quán (ko mặc định + vi, resx)
+src/SolapiSender.AdminTool   exe "SMS_DiemDevAdmin.exe" chỉ cho dev (Admin SDK, giao diện tiếng Việt)
 tests/SolapiSender.Core.Tests        unit + test emulator (Category=Emulator, tự skip nếu không có emulator)
 tests/SolapiSender.AdminTool.Tests   test đầu-cuối Admin ⇄ UserApp trên emulator
 firebase/   firestore.rules, firestore.indexes.json, firebase.json, rules-tests/ (Node, @firebase/rules-unit-testing)

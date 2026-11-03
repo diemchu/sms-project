@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     xmlns:vm="clr-namespace:SolapiSender.AdminTool.ViewModels"
-    Title="SolapiSender Admin"
+    Title="SMS_DiemDev Admin"
     Width="460"
     Height="560"
     d:DataContext="{d:DesignInstance vm:LoginViewModel}"
@@ -24,7 +24,7 @@
             <Border Width="52" Height="52" HorizontalAlignment="Left" Background="{DynamicResource AccentFillColorDefaultBrush}" CornerRadius="14">
                 <ui:SymbolIcon FontSize="28" Foreground="{DynamicResource TextOnAccentFillColorPrimaryBrush}" Symbol="ShieldKeyhole24" />
             </Border>
-            <TextBlock Margin="0,18,0,2" Style="{StaticResource PageTitle}" Text="Quản trị SolapiSender" />
+            <TextBlock Margin="0,18,0,2" Style="{StaticResource PageTitle}" Text="Quản trị SMS_DiemDev" />
             <TextBlock Style="{StaticResource PageSubtitle}" Text="{Binding ProjectText}" />
 
             <TextBlock Style="{StaticResource FieldLabel}" Text="Tên đăng nhập" />

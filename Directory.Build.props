@@ -7,7 +7,7 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <Version>1.0.0</Version>
     <Company>SolapiSender</Company>
-    <Product>SolapiSender</Product>
+    <Product>SMS_DiemDev</Product>
     <SatelliteResourceLanguages>ko;vi</SatelliteResourceLanguages>
   </PropertyGroup>
 </Project>

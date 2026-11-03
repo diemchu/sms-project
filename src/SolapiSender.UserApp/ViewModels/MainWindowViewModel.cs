@@ -20,7 +20,7 @@ public sealed partial class MainWindowViewModel : ObservableObject
     [ObservableProperty] private string _expiryText = "";
     [ObservableProperty] private bool _expirySoon;
 
-    public string Title => App.PreviewMode ? "SOLAPI Sender — PREVIEW" : "SOLAPI Sender";
+    public string Title => App.PreviewMode ? "SMS_DiemDev — PREVIEW" : "SMS_DiemDev";
 
     private void Refresh()
     {

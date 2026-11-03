@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <UseWPF>true</UseWPF>
     <RootNamespace>SolapiSender.AdminTool</RootNamespace>
-    <AssemblyName>SolapiSenderAdmin</AssemblyName>
+    <AssemblyName>SMS_DiemDevAdmin</AssemblyName>
     <ApplicationManifest>..\SolapiSender.UserApp\app.manifest</ApplicationManifest>
   </PropertyGroup>
 

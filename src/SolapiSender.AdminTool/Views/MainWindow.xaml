@@ -5,7 +5,7 @@
     xmlns:pages="clr-namespace:SolapiSender.AdminTool.Views.Pages"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     x:Name="Root"
-    Title="SolapiSender Admin"
+    Title="SMS_DiemDev Admin"
     Width="1360"
     Height="860"
     MinWidth="1100"

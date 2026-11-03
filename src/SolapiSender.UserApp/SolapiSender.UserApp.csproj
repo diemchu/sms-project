@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <UseWPF>true</UseWPF>
     <RootNamespace>SolapiSender.UserApp</RootNamespace>
-    <AssemblyName>SolapiSender</AssemblyName>
+    <AssemblyName>SMS_DiemDev</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <NeutralLanguage>ko</NeutralLanguage>
   </PropertyGroup>

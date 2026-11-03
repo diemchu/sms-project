@@ -24,7 +24,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <ui:TitleBar Title="SOLAPI Sender" ShowMaximize="False" ShowMinimize="False" />
+        <ui:TitleBar Title="SMS_DiemDev" ShowMaximize="False" ShowMinimize="False" />
 
         <StackPanel Grid.Row="1" Margin="40,8,40,32">
             <Border
