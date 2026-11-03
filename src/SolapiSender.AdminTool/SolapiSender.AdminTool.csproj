@@ -6,6 +6,7 @@
     <RootNamespace>SolapiSender.AdminTool</RootNamespace>
     <AssemblyName>SMS_DiemDevAdmin</AssemblyName>
     <ApplicationManifest>..\SolapiSender.UserApp\app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

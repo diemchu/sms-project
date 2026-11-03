@@ -6,6 +6,7 @@
     <RootNamespace>SolapiSender.UserApp</RootNamespace>
     <AssemblyName>SMS_DiemDev</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\app.ico</ApplicationIcon>
     <NeutralLanguage>ko</NeutralLanguage>
   </PropertyGroup>
 
