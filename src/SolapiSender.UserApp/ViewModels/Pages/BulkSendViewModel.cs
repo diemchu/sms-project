@@ -10,6 +10,7 @@ using SolapiSender.Core.Firebase;
 using SolapiSender.Core.Messaging;
 using SolapiSender.Core.Models;
 using SolapiSender.Core.Models.Firebase;
+using SolapiSender.Core.Security;
 using SolapiSender.Core.Solapi;
 using SolapiSender.UserApp.Localization;
 using SolapiSender.UserApp.Services;
@@ -26,8 +27,14 @@ public sealed record SendResultRow(string Phone, string? Name, RecipientSendStat
     };
 }
 
+/// <summary>Bản nháp tự lưu (mã hóa DPAPI) để không mất người nhận/nội dung khi tắt app.</summary>
+internal sealed record BulkSendDraft(List<RawRecipient> Recipients, string MessageText, string Subject, bool IsAd, string? ImagePath);
+
 public sealed partial class BulkSendViewModel : ObservableObject
 {
+    private readonly DpapiStore _store;
+    private readonly DispatcherTimer _draftTimer;
+    private bool _draftReady;
     private readonly ExcelService _excel;
     private readonly BulkSender _sender;
     private readonly SolapiClient _solapi;
@@ -41,8 +48,9 @@ public sealed partial class BulkSendViewModel : ObservableObject
     private bool _initialized;
 
     public BulkSendViewModel(ExcelService excel, BulkSender sender, SolapiClient solapi, SenderNumberService senders,
-        CloudDataService cloud, SessionService session, UiService ui, ActivityLogService log, ILogger<BulkSendViewModel> logger)
+        CloudDataService cloud, SessionService session, UiService ui, ActivityLogService log, DpapiStore store, ILogger<BulkSendViewModel> logger)
     {
+        _store = store;
         _excel = excel;
         _sender = sender;
         _solapi = solapi;
@@ -58,6 +66,12 @@ public sealed partial class BulkSendViewModel : ObservableObject
         {
             _recalcTimer.Stop();
             await RecalculateAsync();
+        };
+        _draftTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
+        _draftTimer.Tick += (_, _) =>
+        {
+            _draftTimer.Stop();
+            SaveDraft();
         };
         senders.DefaultChanged += (_, _) => SelectedSender = senders.DefaultNumber;
         Loc.Instance.LanguageChanged += (_, _) => ScheduleRecalc();
@@ -117,10 +131,14 @@ public sealed partial class BulkSendViewModel : ObservableObject
 
     public async Task OnShownAsync()
     {
+        // Mẫu tin có thể được thêm/sửa ở trang Mẫu tin → tải lại mỗi lần mở trang.
+        await ReloadTemplatesAsync();
+
         if (_initialized) return;
         _initialized = true;
         AdSenderName = _session.Profile?.StoreName ?? "";
         OptOutNumber = _session.CloudSettings.OptOutNumber ?? "";
+        RestoreDraft();
 
         try
         {
@@ -131,17 +149,21 @@ public sealed partial class BulkSendViewModel : ObservableObject
         {
             _ui.Error(ex);
         }
+        ScheduleRecalc();
+    }
 
+    private async Task ReloadTemplatesAsync()
+    {
         try
         {
+            var list = await _cloud.GetTemplatesAsync();
             Templates.Clear();
-            foreach (var t in await _cloud.GetTemplatesAsync()) Templates.Add(t);
+            foreach (var t in list) Templates.Add(t);
         }
-        catch (Exception ex) when (ex is FirestoreException or FirebaseAuthException)
+        catch (Exception ex) when (ex is FirestoreException or FirebaseAuthException or System.Net.Http.HttpRequestException)
         {
             _logger.LogWarning(ex, "Không tải được mẫu tin");
         }
-        ScheduleRecalc();
     }
 
     partial void OnMessageTextChanged(string value) => ScheduleRecalc();
@@ -149,6 +171,7 @@ public sealed partial class BulkSendViewModel : ObservableObject
     partial void OnAdSenderNameChanged(string value) => ScheduleRecalc();
     partial void OnOptOutNumberChanged(string value) => ScheduleRecalc();
     partial void OnImagePathChanged(string? value) => ScheduleRecalc();
+    partial void OnSubjectChanged(string value) => ScheduleDraftSave();
 
     partial void OnSelectedTemplateChanged(MessageTemplate? value)
     {
@@ -162,6 +185,68 @@ public sealed partial class BulkSendViewModel : ObservableObject
     {
         _recalcTimer.Stop();
         _recalcTimer.Start();
+        ScheduleDraftSave();
+    }
+
+    // ------------------------------------------------------------------ Bản nháp
+
+    private string DraftName => "draft-" + _session.Uid;
+
+    private void ScheduleDraftSave()
+    {
+        if (!_draftReady) return;
+        _draftTimer.Stop();
+        _draftTimer.Start();
+    }
+
+    private void RestoreDraft()
+    {
+        try
+        {
+            if (string.IsNullOrEmpty(_session.Uid)) return;
+            var draft = _store.Load<BulkSendDraft>(DraftName);
+            if (draft is null) return;
+
+            foreach (var v in draft.Recipients.SelectMany(r => r.Variables?.Keys ?? []).Distinct())
+                if (!AvailableVariables.Contains(v)) AvailableVariables.Add(v);
+            if (draft.Recipients.Count > 0) AddRecipients(draft.Recipients);
+
+            MessageText = draft.MessageText ?? "";
+            Subject = draft.Subject ?? "";
+            IsAd = draft.IsAd;
+            if (draft.ImagePath is { } img && File.Exists(img))
+            {
+                ImagePath = img;
+                ImageInfo = $"{Path.GetFileName(img)} · {new FileInfo(img).Length / 1024.0:N0} KB";
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning(ex, "Không khôi phục được bản nháp");
+        }
+        finally
+        {
+            _draftReady = true;
+        }
+    }
+
+    private void SaveDraft()
+    {
+        if (!_draftReady || string.IsNullOrEmpty(_session.Uid)) return;
+        try
+        {
+            if (Recipients.Count == 0 && string.IsNullOrWhiteSpace(MessageText) && string.IsNullOrWhiteSpace(Subject) && ImagePath is null)
+            {
+                _store.Delete(DraftName);
+                return;
+            }
+            var raws = Recipients.Select(r => new RawRecipient(r.RawPhone, r.Name, r.Variables, r.RowNumber)).ToList();
+            _store.Save(DraftName, new BulkSendDraft(raws, MessageText, Subject, IsAd, ImagePath));
+        }
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or System.Security.Cryptography.CryptographicException)
+        {
+            _logger.LogWarning(ex, "Không lưu được bản nháp");
+        }
     }
 
     // ------------------------------------------------------------------ Người nhận: lệnh
@@ -214,6 +299,24 @@ public sealed partial class BulkSendViewModel : ObservableObject
         Recipients.Clear();
         foreach (var r in keep) Recipients.Add(r);
         Summary = RecipientListBuilder.Summarize(keep);
+        ScheduleDraftSave();
+    }
+
+    [RelayCommand]
+    private void RemoveRecipient(Recipient? recipient)
+    {
+        if (IsSending || recipient is null || !Recipients.Contains(recipient)) return;
+
+        // Dựng lại toàn bộ để trạng thái trùng được tính lại (dòng trùng có thể trở thành hợp lệ) và đánh số lại.
+        var raws = Recipients
+            .Where(r => !ReferenceEquals(r, recipient))
+            .Select((r, i) => new RawRecipient(r.RawPhone, r.Name, r.Variables, i + 1));
+        var all = RecipientListBuilder.Build(raws);
+
+        Recipients.Clear();
+        foreach (var r in all) Recipients.Add(r);
+        Summary = RecipientListBuilder.Summarize(all);
+        ScheduleRecalc();
     }
 
     [RelayCommand]
@@ -405,6 +508,13 @@ public sealed partial class BulkSendViewModel : ObservableObject
 
             if (result.StopError is not null) await _ui.AlertAsync(Loc.T("Send_Stopped"), ErrorText.Describe(result.StopError));
             else if (result.AcceptedCount > 0) _ui.Success(ScheduledAt is null ? Loc.T("Send_Done") : Loc.T("Send_Scheduled"));
+
+            // Đã gửi: bỏ bản nháp để lần mở sau không khôi phục lại danh sách vừa gửi.
+            if (result.AcceptedCount > 0)
+            {
+                _draftTimer.Stop();
+                _store.Delete(DraftName);
+            }
 
             _ = _log.LogAsync(_session.Uid, _session.MachineId,
                 ScheduledAt is null ? ActivityLogTypes.Send : ActivityLogTypes.Schedule,

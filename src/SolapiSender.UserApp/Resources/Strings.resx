@@ -6,6 +6,7 @@
   <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
   <data name="BulkSend_AddPasted" xml:space="preserve"><value>목록에 추가</value></data>
   <data name="BulkSend_Clear" xml:space="preserve"><value>전체 삭제</value></data>
+  <data name="BulkSend_RemoveRow" xml:space="preserve"><value>이 수신자 삭제</value></data>
   <data name="BulkSend_ImportExcel" xml:space="preserve"><value>엑셀 불러오기</value></data>
   <data name="BulkSend_Paste" xml:space="preserve"><value>직접 붙여넣기</value></data>
   <data name="BulkSend_PasteHint" xml:space="preserve"><value>한 줄에 번호 하나씩 입력하세요. "번호,이름" 형식도 가능합니다.

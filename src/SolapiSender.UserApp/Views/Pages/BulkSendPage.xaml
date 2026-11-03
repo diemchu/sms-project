@@ -133,6 +133,20 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="52">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate DataType="{x:Type core:Recipient}">
+                                        <ui:Button
+                                            Padding="6,4"
+                                            HorizontalAlignment="Center"
+                                            Appearance="Transparent"
+                                            Command="{Binding DataContext.RemoveRecipientCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                            CommandParameter="{Binding}"
+                                            Icon="{ui:SymbolIcon Delete24}"
+                                            ToolTip="{l:Loc BulkSend_RemoveRow}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </DockPanel>

@@ -6,6 +6,7 @@
   <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader>
   <data name="BulkSend_AddPasted" xml:space="preserve"><value>Thêm vào danh sách</value></data>
   <data name="BulkSend_Clear" xml:space="preserve"><value>Xóa tất cả</value></data>
+  <data name="BulkSend_RemoveRow" xml:space="preserve"><value>Xóa người nhận này</value></data>
   <data name="BulkSend_ImportExcel" xml:space="preserve"><value>Nhập Excel</value></data>
   <data name="BulkSend_Paste" xml:space="preserve"><value>Dán danh sách</value></data>
   <data name="BulkSend_PasteHint" xml:space="preserve"><value>Mỗi dòng một số. Hỗ trợ dạng "số,tên".
